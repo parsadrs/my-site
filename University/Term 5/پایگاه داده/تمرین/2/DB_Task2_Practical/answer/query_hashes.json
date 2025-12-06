@@ -1,0 +1,50 @@
+{
+    "Q0": {
+        "answer": "SELECT \n    e.EmployeeID,\n    e.FirstName,\n    COUNT(o.OrderID) AS TotalOrdersHandled\nFROM Employees e\nLEFT JOIN Orders o\n    ON e.EmployeeID = o.EmployeeID\nGROUP BY \n    e.EmployeeID, \n    e.FirstName\nORDER BY \n    e.EmployeeID;",
+        "hash": "fffa2c542543ab8cd341c254d299066da0122716d38495e10d5a9d96824fe691"
+    },
+    "Q1": {
+        "answer": "SELECT \n    CategoryID,\n    MIN(UnitPrice) AS MinUnitPrice\nFROM Products\nGROUP BY CategoryID\nORDER BY CategoryID;",
+        "hash": "874fa31bbdd466f79a725127befbe83ffcedc6df4a26850981967ddec23e4fa9"
+    },
+    "Q2": {
+        "answer": "SELECT DISTINCT CompanyName\nFROM Suppliers s\nJOIN Products p ON s.SupplierID = p.SupplierID\nWHERE p.UnitPrice > 100;",
+        "hash": "45ceb08a95da9e568369778856605d3831e56527feb6efe74a55b9e78834eb67"
+    },
+    "Q3": {
+        "answer": "SELECT name FROM sqlite_master WHERE type = 'table';",
+        "hash": "Failed"
+    },
+    "Q4": {
+        "answer": "SELECT \n    Title,\n    COUNT(*) AS EmployeeCount\nFROM Employees\nGROUP BY Title\nHAVING COUNT(*) > 1;",
+        "hash": "f18acad8092280a061d1d248060ef77433d7d7fc302b796a1d597804d10e984c"
+    },
+    "Q5": {
+        "answer": "SELECT \n    ROUND( \n        CAST(COUNT(*) AS FLOAT) / (SELECT COUNT(*) FROM Customers), \n        3\n    ) AS AvgOrdersPerCustomer\nFROM Orders;",
+        "hash": "f34a2e29c370089be642f3e45f3526a0d5bed0dc379f7ea891217fcc58ddaab5"
+    },
+    "Q6": {
+        "answer": "SELECT \n    ROUND(AVG(UnitPrice), 3) AS AvgUnitPrice\nFROM Products;",
+        "hash": "4434992407a484531c65b16131d45ab4def90589beae452a60503033c477cd7d"
+    },
+    "Q7": {
+        "answer": "SELECT \n    CompanyName,\n    Country\nFROM Customers\nWHERE Country IN ('USA', 'UK', 'France');",
+        "hash": "ba5776bdeb30c9fb2a2ea679c71d9e2d7cb1f45d046619deedbdb208d8f2f4a4"
+    },
+    "Q8": {
+        "answer": "SELECT \n    ProductName,\n    UnitPrice\nFROM Products\nORDER BY UnitPrice DESC\nLIMIT 5;",
+        "hash": "d313412c768e3cf8c7d07169a0979ca2b40e0981b3ca38bf27e8c72d63943ad4"
+    },
+    "Q9": {
+        "answer": "INSERT INTO Customers (\n    CustomerID, CompanyName, ContactName, ContactTitle,\n    Address, City, Region, PostalCode, Country,\n    Phone, Fax\n) VALUES (\n    'CUST89', 'Sunrise Foods', 'Emma Davis', 'Purchasing Manager',\n    '567 Market Street', 'Austin', 'TX', '73301', 'USA',\n    '512-555-5001', '512-555-5002'\n);",
+        "hash": "4b46b63b8889abcec538094c8e36684f950640e6170f2678ac1efec541d3c36e"
+    },
+    "Q10": {
+        "answer": "DELETE FROM Customers\nWHERE Country = 'USA' AND Region = 'TX';",
+        "hash": "a7395d0aa46390c9683536b710319c5a8df409c2c9b8dfe52ad0d17abe28be5e"
+    },
+    "Q11": {
+        "answer": "UPDATE Customers\nSET Region = 'CA'\nWHERE Country = 'USA';",
+        "hash": "fe083815ebe155f6c72f92938cf4702faa971baba3944e1ab99965ec3c5fb97a"
+    }
+}

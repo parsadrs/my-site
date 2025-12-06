@@ -1,0 +1,12 @@
+net "S(0)" loc = p78;
+net "S(1)" loc = p75;
+net "S(2)" loc = p67;
+net "E" loc = p74;
+net "S(0)" loc = p132;
+net "Q(1)" loc = p131;
+net "Q(2)" loc = p127;
+net "Q(3)" loc = p126;
+net "Q(4)" loc = p124;
+net "Q(5)" loc = p123;
+net "Q(6)" loc = p121;
+net "Q(7)" loc = p120;
